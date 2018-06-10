@@ -13,7 +13,8 @@
         "precommit": "tslint -p ./ --format stylish --fix && pretty-quick --staged",
         "test": "jest",
         "test:watch": "jest --watch",
-        "test:coverage": "rm -rf coverage && jest --coverage"
+        "test:coverage": "rm -rf coverage && jest --coverage",
+        "lint": "tslint -p ./"
     },
     "dependencies": {
         "lodash": "^4.17.10",
