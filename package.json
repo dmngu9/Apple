@@ -10,7 +10,7 @@
         "start": "webpack-dev-server --config webpack.config.dev.js",
         "dev:build": "webpack",
         "prod:build": "webpack --config webpack.config.prod.js",
-        "precommit": "pretty-quick --staged",
+        "precommit": "tslint -p ./ --format stylish --fix && pretty-quick --staged",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "rm -rf coverage && jest --coverage"

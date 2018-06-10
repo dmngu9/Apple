@@ -4,7 +4,7 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import Example from './app';
 
-fdescribe('<Example />', () => {
+describe('<Example />', () => {
     test('should render correctly', () => {
         const wrapper = shallow(<Example />);
 

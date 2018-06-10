@@ -127,22 +127,6 @@
         // This conflicts with prefer-array-literal, see: https://github.com/palantir/tslint/issues/2946
         "array-type": [true, "array"],
 
-        // https://www.npmjs.com/package/rxjs-tslint-rules
-        // Forces rxjs operators to be imported under epics/rxjs.tsx
-        "rxjs-add": {
-            "options": [
-                {
-                    "allowElsewhere": false,
-                    "allowUnused": false,
-                    "file": "./src/epics/rxjs.tsx"
-                }
-            ],
-            "severity": "error"
-        },
-
-        // Disable import from "rxjs";
-        "rxjs-no-wholesale": true,
-
         // https://palantir.github.io/tslint/rules/no-namespace/
         "no-namespace": [true, "allow-declarations"],
 
