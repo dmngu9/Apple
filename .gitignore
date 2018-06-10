@@ -19,6 +19,7 @@ temp
 .tmp
 .temp
 coverage
+test-results
 **/target
 generated
 .nyc_output

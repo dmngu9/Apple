@@ -5,6 +5,10 @@ module.exports = {
     transform: {
         '^.+\\.tsx?$': 'ts-jest'
     },
+    reporters: [
+        'default', 
+        ['jest-junit', { suiteName: 'unit tests', output: './test-results/test-results.xml' }]
+    ],
     setupTestFrameworkScriptFile: path.join(__dirname, 'enzymeSetup.js'),
     snapshotSerializers: ['enzyme-to-json/serializer'],
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',

@@ -31,13 +31,13 @@ jobs:
           paths:
             - ./node_modules
       - run: # run tests with coverage
-          name: test-coverage
-          command: yarn test:coverage
+          name: test
+          command: yarn test:ci
       - store_artifacts: # special step to save test results as as artifact
-          path: coverage/clover.xml
+          path: test-results/test-results.xml
           prefix: tests
       - store_artifacts:
           path: coverage/lcov-report/index.html
           prefix: coverage
       - store_test_results: # special step to upload test results for display in Test Summary
-          path: coverage/clover.xml
+          path: test-results/test-results.xml
