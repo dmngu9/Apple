@@ -11,11 +11,23 @@
         "dev:build": "rm -rf build && webpack --config webpack.config.dev.js",
         "prod:build": "rm -rf build && webpack --config webpack.config.prod.js",
         "storybook": "start-storybook -p 9000",
-        "precommit": "tslint -p ./ && pretty-quick --staged",
+        "precommit": "lint-staged",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "rm -rf coverage && jest --coverage",
         "lint": "tslint -p ./"
+    },
+    "lint-staged": {
+        "*.{tsx,ts}": [
+            "prettier --write",
+            "tslint -p ./ --format stylish --fix",
+            "stylelint",
+            "git add"
+        ],
+        "*.{json,md}": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "dependencies": {
         "lodash": "^4.17.10",
@@ -59,8 +71,8 @@
         "html-webpack-plugin": "^3.2.0",
         "husky": "^0.14.3",
         "jest": "^23.1.0",
+        "lint-staged": "^7.1.3",
         "prettier": "1.13.5",
-        "pretty-quick": "^1.6.0",
         "progress-bar-webpack-plugin": "^1.11.0",
         "react-docgen-typescript-webpack-plugin": "^1.1.0",
         "rxjs-tslint-rules": "^4.4.1",
