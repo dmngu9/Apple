@@ -10,7 +10,10 @@
         "start": "webpack-dev-server --config webpack.config.dev.js",
         "dev:build": "webpack",
         "prod:build": "webpack --config webpack.config.prod.js",
-        "precommit": "pretty-quick --staged"
+        "precommit": "pretty-quick --staged",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
     },
     "dependencies": {
         "lodash": "^4.17.10",
@@ -50,6 +53,7 @@
         "prettier": "1.13.5",
         "pretty-quick": "^1.6.0",
         "progress-bar-webpack-plugin": "^1.11.0",
+        "react-test-renderer": "^16.4.0",
         "rxjs-tslint-rules": "^4.4.1",
         "source-map-loader": "^0.2.3",
         "stylelint": "^9.2.1",
