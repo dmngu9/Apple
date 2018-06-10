@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Example /> should render correctly 1`] = `
+<div
+  className="sc-bdVaJa clIOeS"
+  onClick={[Function]}
+>
+  This is 
+  left
+</div>
+`;
+
+exports[`<Example /> should update component when on click 1`] = `
+<div
+  className="sc-bdVaJa clIOeS"
+  onClick={[Function]}
+>
+  This is 
+  right
+</div>
+`;

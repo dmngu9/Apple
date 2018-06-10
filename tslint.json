@@ -1,152 +1,152 @@
-module.exports = {
-    extends: [
-        'tslint:recommended',
-        'tslint-react',
-        'tslint-config-airbnb',
-        'tslint-eslint-rules',
-        'tslint-no-circular-imports',
-        'rxjs-tslint-rules',
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-config-airbnb",
+        "tslint-eslint-rules",
+        "tslint-no-circular-imports",
+        "rxjs-tslint-rules"
     ],
 
-    rules: {
+    "rules": {
         // ========== CUSTOM RULES ==============
         // ensure that indexes do not contain anything other than import and export declarations
-        'dumb-index-only': true,
+        "dumb-index-only": true,
 
         // ========== FORMATTING RULES ==========
 
         // Prettier will handle all formatting for us.
-        'space-in-parens': false,
-        semicolon: false,
-        'ter-indent': false,
-        'space-before-function-paren': false,
-        'no-consecutive-blank-lines': false,
-        'ter-arrow-parens': false,
-        'trailing-comma': false,
-        'jsx-wrap-multiline': false,
-        quotemark: [true, 'single', 'jsx-double'],
-        'max-line-length': false,
-        align: false,
-        'object-curly-spacing': false,
-        'jsx-alignment': false,
-        eofline: false,
-        'one-line': false,
-        'jsx-no-multiline-js': false,
-        'jsx-curly-spacing': false,
+        "space-in-parens": false,
+        "semicolon": [true, "always"],
+        "ter-indent": false,
+        "space-before-function-paren": false,
+        "no-consecutive-blank-lines": false,
+        "ter-arrow-parens": false,
+        "trailing-comma": false,
+        "jsx-wrap-multiline": false,
+        "quotemark": [true, "single", "jsx-double"],
+        "max-line-length": false,
+        "align": false,
+        "object-curly-spacing": false,
+        "jsx-alignment": false,
+        "eofline": false,
+        "one-line": false,
+        "jsx-no-multiline-js": false,
+        "jsx-curly-spacing": false,
 
         // ========== CODE STYLE RULES ==========
 
         // Ensure each case has a break.
-        'no-switch-case-fall-through': true,
+        "no-switch-case-fall-through": true,
 
         // https://palantir.github.io/tslint/rules/ordered-imports/
         // Turns off ordered imports.
-        'ordered-imports': false,
+        "ordered-imports": false,
 
         // https://palantir.github.io/tslint/rules/variable-name/
         // Enforces consistent variable names.
-        'variable-name': [true, 'ban-keywords', 'check-format', 'allow-pascal-case'],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
 
-        // Supress import name rule which doesn't seem to work for
+        // Supress import name rule which doesn"t seem to work for
         // default imports.
-        'import-name': false,
+        "import-name": false,
 
         // https://palantir.github.io/tslint/rules/no-console/
         // Disable console
-        'no-console': true,
+        "no-console": true,
 
         // https://palantir.github.io/tslint/rules/no-unused-expression/
-        // Errors when function invocations aren't used. Can still do fast null check (x && y)
+        // Errors when function invocations aren"t used. Can still do fast null check (x && y)
         // and use tagged templates (styled components for example).
-        'no-unused-expression': false,
+        "no-unused-expression": false,
 
         // https://palantir.github.io/tslint/rules/no-unused-variable/
-        'no-unused-variable': true,
+        "no-unused-variable": true,
 
         // https://palantir.github.io/tslint/rules/no-for-in-array/
         // Disable for in array, use [].forEach and other functional
-        'no-for-in-array': true,
+        "no-for-in-array": true,
 
         // https://palantir.github.io/tslint/rules/no-implicit-dependencies/
-        // Disable importing dependencies that aren't in package.json
-        // Absolute imports don't work with this atm.
+        // Disable importing dependencies that aren"t in package.json
+        // Absolute imports don"t work with this atm.
         // See: https://github.com/palantir/tslint/issues/3483
-        'no-implicit-dependencies': false,
+        "no-implicit-dependencies": false,
 
         // https://palantir.github.io/tslint/rules/no-invalid-this/
         // This is fine.
-        'no-invalid-this': false,
+        "no-invalid-this": false,
 
         // https://palantir.github.io/tslint/rules/no-return-await/
         // Disable returning a promise with await
-        'no-return-await': true,
+        "no-return-await": true,
 
         // https://palantir.github.io/tslint/rules/no-string-throw/
         // Disable throwing a string. Throw and error instead!
-        'no-string-throw': true,
+        "no-string-throw": true,
 
         // https://palantir.github.io/tslint/rules/switch-default/
         // Require switches to have a default case
-        'switch-default': true,
+        "switch-default": true,
 
         // https://palantir.github.io/tslint/rules/prefer-object-spread/
         // Use { ...obj } over Object.assign
-        'prefer-object-spread': true,
+        "prefer-object-spread": true,
 
         // https://palantir.github.io/tslint/rules/member-access/
-        // Don't allow public modifier as it's the default behaviour
-        'member-access': [true, 'no-public'],
+        // Don"t allow public modifier as it"s the default behaviour
+        "member-access": [true, "no-public"],
 
         // https://palantir.github.io/tslint/rules/no-parameter-properties/
         // Disables using param properties in class constructors.
         // E.g constructor(public name, private address) will error.
-        'no-parameter-properties': true,
+        "no-parameter-properties": true,
 
         // https://palantir.github.io/tslint/rules/interface-name/
-        // Enforces interfaces to not have an 'I' prefix.
-        'interface-name': [true, 'never-prefix'],
+        // Enforces interfaces to not have an "I" prefix.
+        "interface-name": [true, "never-prefix"],
 
         // Error if any is used anywhere.
-        'no-any': true,
+        "no-any": true,
 
         // https://palantir.github.io/tslint/rules/strict-boolean-expressions/
         // Allow shorthand expressions x && y
-        'strict-boolean-expressions': false,
+        "strict-boolean-expressions": false,
 
         // https://palantir.github.io/tslint/rules/import-blacklist/
         // Disallow importing all of rxjs.
-        'import-blacklist': [true, 'rxjs'],
+        "import-blacklist": [true, "rxjs"],
 
         // Use shorthand for boolean in jsx elements.
-        'jsx-boolean-value': [true, 'never'],
+        "jsx-boolean-value": [true, "never"],
 
         // Annoying rule for code already written.
-        'object-literal-sort-keys': false,
+        "object-literal-sort-keys": false,
 
         // Prefer `${}` over x + z
-        'prefer-template': true,
+        "prefer-template": true,
 
         // https://palantir.github.io/tslint/rules/array-type/
         // This conflicts with prefer-array-literal, see: https://github.com/palantir/tslint/issues/2946
-        'array-type': [true, 'array'],
+        "array-type": [true, "array"],
 
         // https://www.npmjs.com/package/rxjs-tslint-rules
         // Forces rxjs operators to be imported under epics/rxjs.tsx
-        'rxjs-add': {
-            options: [
+        "rxjs-add": {
+            "options": [
                 {
-                    allowElsewhere: false,
-                    allowUnused: false,
-                    file: './src/epics/rxjs.tsx',
-                },
+                    "allowElsewhere": false,
+                    "allowUnused": false,
+                    "file": "./src/epics/rxjs.tsx"
+                }
             ],
-            severity: 'error',
+            "severity": "error"
         },
 
-        // Disable import from 'rxjs';
-        'rxjs-no-wholesale': true,
+        // Disable import from "rxjs";
+        "rxjs-no-wholesale": true,
 
         // https://palantir.github.io/tslint/rules/no-namespace/
-        'no-namespace': [true, 'allow-declarations'],
-    },
-};
+        "no-namespace": [true, "allow-declarations"]
+    }
+}
