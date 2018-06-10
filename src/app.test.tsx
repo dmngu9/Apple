@@ -1,21 +1,13 @@
 import * as React from 'react';
-import { create } from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
+
 import Example from './app';
 
 fdescribe('<Example />', () => {
     test('should render correctly', () => {
-        const component = create(<Example />);
+        const wrapper = shallow(<Example />);
 
-        expect(component.toJSON()).toMatchSnapshot();
-    });
-
-    test('should update component when on click', () => {
-        const component = create(<Example />);
-        let tree = component.toJSON();
-
-        tree && tree.props.onClick();
-        tree = component.toJSON();
-
-        expect(tree).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 });

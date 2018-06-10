@@ -5,6 +5,8 @@ module.exports = {
     transform: {
         '^.+\\.tsx?$': 'ts-jest'
     },
+    setupTestFrameworkScriptFile: path.join(__dirname, 'enzymeSetup.js'),
+    snapshotSerializers: ['enzyme-to-json/serializer'],
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
     coverageDirectory: path.join(__dirname, 'coverage'),
