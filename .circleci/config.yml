@@ -40,4 +40,4 @@ jobs:
           path: coverage/lcov-report/index.html
           prefix: coverage
       - store_test_results: # special step to upload test results for display in Test Summary
-          path: test-results/test-results.xml
+          path: test-results

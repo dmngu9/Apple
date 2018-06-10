@@ -7,7 +7,7 @@ module.exports = {
     },
     reporters: [
         'default', 
-        ['jest-junit', { suiteName: 'unit tests', output: './test-results/test-results.xml' }]
+        ['jest-junit', { suiteName: 'unit tests', output: './test-results/results.xml' }]
     ],
     setupTestFrameworkScriptFile: path.join(__dirname, 'enzymeSetup.js'),
     snapshotSerializers: ['enzyme-to-json/serializer'],
