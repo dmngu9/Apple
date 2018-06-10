@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(baseConfig, {
     mode: 'development',
@@ -12,5 +13,13 @@ module.exports = merge(baseConfig, {
         hot: true,
         inline: true
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+
+        new HtmlWebpackPlugin({
+            title: 'Apple',
+            template: './src/index.html',
+            excludeChunks: 'vendors~main'
+        })
+    ]
 });

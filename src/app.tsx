@@ -5,12 +5,18 @@ import { Root } from './styles';
 interface State {
     name: string;
 }
-export default class Example extends React.Component<{}, State> {
+
+interface Props {
+    onClick?: () => void;
+}
+
+export default class Example extends React.Component<Props, State> {
     state: State = {
         name: 'left'
     };
 
     onClick = () => {
+        this.props.onClick && this.props.onClick();
         this.setState({ name: 'right' });
     };
 

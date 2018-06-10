@@ -1,8 +1,6 @@
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HappyPack = require('happypack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
@@ -42,8 +40,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['build']),
-
         new ProgressBarPlugin({
             format: 'Building Apple: [:bar] :percent (:elapsed seconds)'
         }),
@@ -64,12 +60,6 @@ module.exports = {
 
         new ForkTsCheckerWebpackPlugin({
             checkSyntacticErrors: true
-        }),
-
-        new HtmlWebpackPlugin({
-            title: 'Apple',
-            template: './src/index.html',
-            excludeChunks: 'vendors~main'
         }),
 
         new CircularDependencyPlugin({
