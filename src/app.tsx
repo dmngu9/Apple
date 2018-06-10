@@ -1,4 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-render(<div>Hey</div>, document.getElementById('root'));
+import { Root } from './styles';
+
+render(<Root>Hey</Root>, document.getElementById('root'));

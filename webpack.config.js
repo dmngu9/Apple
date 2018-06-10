@@ -12,7 +12,7 @@ module.exports = {
     entry: './src/app.tsx',
     output: {
         path: path.join(__dirname, 'build'),
-        publicPath: 'assets',
+        publicPath: '/',
         filename: 'bundle.[hash].js'
     },
     resolve: {

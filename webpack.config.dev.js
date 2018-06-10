@@ -10,8 +10,7 @@ module.exports = merge(baseConfig, {
         contentBase: path.join(__dirname, 'build'),
         port: 8000,
         hot: true,
-        inline: true,
-        open: true
+        inline: true
     },
     plugins: [new webpack.HotModuleReplacementPlugin()]
 });
