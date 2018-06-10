@@ -9,6 +9,7 @@
         "jsx": "react",
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": false,
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
@@ -21,7 +22,7 @@
         "rootDir": ".",
         "baseUrl": ".",
         "paths": {
-            "*": ["*", "node_modules", "src/*"],
+            "*": ["*", "node_modules", "src/*"]
         }
     },
     "exclude": ["node_modules", "build"]
