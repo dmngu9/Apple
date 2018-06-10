@@ -1,0 +1,43 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.1
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/Apple
+
+    steps: # a collection of executable commands 
+      - checkout # special step to check out source code to working directory
+      - run:
+          name: install-yarn
+          command: 'sudo npm install -g yarn@latest'
+      - restore_cache: # special step to restore the dependency cache 
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-dependencies
+          command: yarn install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: # run tests with coverage
+          name: test-coverage
+          command: yarn test:coverage
+      - store_artifacts: # special step to save test results as as artifact
+          path: coverage/clover.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage/lcov-report/index.html
+          prefix: coverage
+      - store_test_results: # special step to upload test results for display in Test Summary
+          path: coverage/clover.xml
