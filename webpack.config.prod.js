@@ -11,9 +11,6 @@ module.exports = merge(baseConfig, {
         chunkFilename: 'assets/[name].chunk.[chunkhash].js'
     },
     optimization: {
-        splitChunks: {
-            chunks: 'all'
-        },
         minimizer: [
             new UglifyJsPlugin({
                 sourceMap: true,
@@ -30,7 +27,6 @@ module.exports = merge(baseConfig, {
         new HtmlWebpackPlugin({
             title: 'Apple',
             template: './src/index.html',
-            excludeChunks: 'vendors~main'
         })
     ]
 });
